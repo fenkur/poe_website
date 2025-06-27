@@ -3,6 +3,10 @@ import { Marcellus } from "next/font/google";
 import Image from 'next/image';
 import Portraits from './images/portraits/1.jpg';
 import Chickii from './images/chickii/1.jpg';
+import Animals from './images/animals/1.jpg';
+import Landscapes from './images/landscape/1.jpg';
+import Images from './images/carousel/1.jpg'
+import Link from 'next/link';
 
 const MarcellusFont = Marcellus({
     subsets: ["latin"],
@@ -14,29 +18,18 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      
-      {/* Introduction Section */}
+
+      {/* Carousel Section */}
       <section>
-        <div className={MarcellusFont.className}>
-          <div className="text-center my-30">
-            <h1 className="text-5xl"> Hi, I&apos;m Poe Reh!</h1>
-            <p className="text-2xl my-2">Scroll down to see some of my work</p>
-          </div>
+        <div className="w-screen h-screen">
+          <Image src={Images} fill priority className="px-12 py-15" alt="Carousel-Image" quality={100} />
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="flex justify-center">
-        <div className="grid grid-cols-2 gap-6 max-w-4xl">
-          <div className="flex justify-center">
-            <Image src={Portraits} height={500} width={500} alt="Portrait-Projects" />
-          </div>
-          <div className="flex justify-center">
-            <Image src={Chickii} height={500} width={500} style={{objectFit: 'contain'}} alt="Chickii-Project" />
-          </div>
-        </div>
+      {/* Portfolio Section */}
+      <section>
+        
       </section>
-
     </>
   );
 }
